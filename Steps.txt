@@ -1,0 +1,9 @@
+Calculate the number of employees corresponding to each skill from the table 'employee' which is
+loaded in the Demo.
+
+hive> select count(*) from
+(select skill,count(*) as CNT
+FROM employee
+GROUP BY skill
+) as T
+where CNT>1
